@@ -1,0 +1,65 @@
+<div class="box">
+<form #predictionForm="ngForm">
+      <div class="predictParent">
+        <span class="divhead">Titanic Disaster</span>
+        <div class="inputfields">
+          <div class="input">
+          <br />
+          <input type="tel" placeholder="Passenger ID" [(ngModel)]="predictvar.PassengerId" name="PassengerId" required #PassengerId="ngModel" />
+          <br />
+          <small class="error" *ngIf="PassengerId.touched && PassengerId.invalid">Invalid Passenger ID</small>
+          </div>
+          <div class="input">
+          <br />
+          <input type="tel" placeholder="Passenger Class" [(ngModel)]="predictvar.Pclass" name="Pclass" required #Pclass="ngModel" />
+          <br />
+          <small class="error" *ngIf="Pclass.touched && Pclass.invalid">Invalid Passenger Class</small>
+          </div>
+          <div class="input">
+            <br />
+            <input type="tel" placeholder="Age" [(ngModel)]="predictvar.Age" name="Age" required #Age="ngModel" />
+            <br />
+            <small class="error" *ngIf="Age.touched && Age.invalid">Invalid Age</small>
+          </div>
+          <div class="input">
+            <br />
+            <input type="tel" placeholder="tel Of Siblings" [(ngModel)]="predictvar.SibSp" name="SibSp" required #SibSp="ngModel" />
+            <br />
+            <small class="error" *ngIf="SibSp.touched && SibSp.invalid">Invalid tel Of Siblings</small>
+          </div>
+          <div class="input">
+            <br />
+            <input type="tel" placeholder="Parent Or Child" [(ngModel)]="predictvar.Parch" name="Parch" required #Parch="ngModel" />
+            <br />
+            <small class="error" *ngIf="Parch.touched && Parch.invalid">Enter For Parent Or Child</small>
+          </div>
+          <div class="input">
+            <br />
+            <input type="tel" placeholder="Ticket" [(ngModel)]="predictvar.Ticket" name="Ticket" required #Ticket="ngModel" />
+            <br />
+            <small class="error" *ngIf="Ticket.touched && Ticket.invalid">Invalid Ticket tel</small>
+          </div>
+          <div class="input">
+            <br />
+            <input type="tel" placeholder="Fare" [(ngModel)]="predictvar.Fare" name="Fare" required #Fare="ngModel" />
+            <br />
+            <small class="error" *ngIf="Fare.touched && Fare.invalid">Invalid Fare Amount</small>
+          </div>
+          <div class="input">
+            <br />
+            <select id="Cabin" [(ngModel)]="Cabin" name="Cabin" required>
+                <option value="" disabled selected hidden>---Cabin Of Residence---</option>
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+                <option value="S">S</option>
+            </select>
+            <br />
+            <br />
+        </div>
+          <div class="input final">
+          <button type="button" class="btn btn-success" (click)="predict()" [disabled]=predictionForm.invalid>Login</button>
+          </div>
+        </div>
+      </div>
+</form>
+</div>
